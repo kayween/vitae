@@ -46,11 +46,12 @@
 
 % https://tex.stackexchange.com/questions/233581/ateverybibitem-clearfieldtitle-in-beamer
 % Remove "in:" in bibliography
-% \renewbibmacro{in:}{}
-% \AtEveryCitekey{%
-%     \ifentrytype{inproceedings}
-%     {\clearfield{year}}{}%
-% }
+\renewbibmacro{in:}{}
+\AtEveryCitekey{%
+    \ifentrytype{inproceedings}
+    {\clearfield{year}}{}%
+}
+
 \AtEveryBibitem{\clearfield{pages}}
 \AtEveryBibitem{\clearfield{volume}}
 \AtEveryBibitem{\clearfield{number}}
@@ -84,6 +85,32 @@
 }
 %%%%%%
 
+%%% add new line after name and title, goat answer
+% https://tex.stackexchange.com/questions/351397/biblatex-add-line-breaks-after-author-and-title
+\DeclareDelimFormat[bib]{nametitledelim}{\newline\bibsentence}
+
+\usepackage{xpatch}
+\makeatletter
+\def\do#1{
+  \ifcsdef{blx@bbx@#1}
+    {\xpatchbibdriver{#1}
+       {\printlist{language}%
+        \newunit\newblock}
+       {\printlist{language}%
+        \printunit{\newline\bibsentence}}
+       {}{}}
+    {}} 
+\abx@doentrytypes
+
+% % remove quotation marks, goat
+% % https://tex.stackexchange.com/questions/462133/remove-quotation-marks-from-style
+% \DeclareFieldFormat
+%   [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+%   {title}{#1\isdot}
+
+\DeclareFieldFormat*{title}{#1}
+\DeclareFieldFormat*{booktitle}{#1}
+
 \usepackage{setspace}
 
 \titleformat{\section}{\normalfont\bfseries\uppercase}{}{0em}{}[{\hrule}]
@@ -96,6 +123,8 @@
 \newcommand{\spanpage}[2]{%
     #1 \hfill {#2}{\parfillskip0pt\par}%
 }
+
+\renewcommand*{\bibfont}{\small}
 
 % latex does not allow arguments in the closing section.
 % https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
