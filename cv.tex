@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage{titlesec}
+
+\usepackage{cv}
+\addbibresource[glob=true]{./bib/*}
+
+\begin{document}
+
+\textbf{\Large Kaiwen Wu}
+\hfill
+\texttt{kaiwenwu@seas.upenn.edu}
+
+Philadelphia, PA, USA
+\hfill
+\url{https://www.seas.upenn.edu/~kaiwenwu}
+
+\section{Education}
+\begin{education}[]{University of Pennsylvania}{Philadelphia, PA}{Ph.D. in Computer and Information Science}{2021 - Present}
+\begin{compactList}
+\item Advisor: Jacob R. Gardner
+\end{compactList}
+\end{education}
+
+\begin{education}{University of Waterloo}{Waterloo, ON}{Master of Mathematics in Computer Science}{2018 - 2020}
+\begin{compactList}
+\item Advisor: Yaoliang Yu
+\end{compactList}
+\end{education}
+
+\begin{education}{Nanjing University}{Nanjing, China}{Bachelor of Science in Computer Science}{2014 - 2018}
+\end{education}
+
+\section{Research Interests}
+Machine Learning, Gaussian Processes, Variational Inference, Bayesian Optimization, Convex Optimization.
+
+\section{Work Experience}
+% \begin{work}{Huawei Noah's Ark Lab, Montr\'eal}{Montr\'eal, QC }{Associate Researcher}{Nov 2020 - Aug 2021}
+% \begin{compactList}
+% \item Research on robustness of graph neural networks.
+% \item Proposed a discrete local search method for generating adversarial perturbations on graphs.
+% \end{compactList}
+% \end{work}
+
+\begin{work}[]{Meta Reality Labs}{Redmond, WA}{Research Scientist Intern}{Aug 2024 - Dec 2024}
+\begin{compactList}
+\item Worked on experimental designs for virtual reality using active learning.
+\end{compactList}
+\end{work}
+
+\begin{work}{Borealis AI}{Waterloo, ON}{Research Intern}{Jan 2019 - May 2019}
+\begin{compactList}
+\item Worked on robust mean estimation using generative adversarial networks on noisy data.
+\item Published a paper at AISTATS 2020.
+\end{compactList}
+\end{work}
+
+\section{Open Source Contributions}
+\textbf{BoTorch} (\url{https://github.com/pytorch/botorch}) \\
+A Python package for Bayesian optimization in PyTorch
+\begin{compactList}
+\item Implemented an improved elliptical slice sampling method for truncated normal distributions.
+\end{compactList}
+
+\nocite{*}
+
+\section{Refereed Conference Proceedings}
+\printbibliography[keyword={conference}, heading=none]
+
+\section{Lightly Reviewed Papers}
+\printbibliography[keyword={workshop}, heading=none]
+
+\section{Teaching Experience}
+\textbf{University of Pennsylvania}
+\begin{compactList}
+\item Teaching Assistant, CIS 520 Machine Learning \hfill Fall 2023
+\item Teaching Assistant, ESE 204 Decision Models \hfill Fall 2022 
+\end{compactList}
+
+\medskip
+
+\textbf{University of Waterloo}
+\begin{compactList}
+\item Teaching Assistant, CS 370 Numerical Computation \hfill Spring 2020
+\item Teaching Assistant, CS 486/686 Introduction to Artificial Intelligence \hfill Spring 2019
+\item Teaching Assistant, CS 480/680 Introduction to Machine Learning \hfill Fall 2018
+\end{compactList}
+
+\section{Honors and Awards}
+\begin{compactList}
+\item NeurIPS Top Reviewer \hfill 2024
+\item Vector Scholarship in Artificial Intelligence, Vector Institute \hfill 2018
+\item Entrance Scholarship, University of Waterloo \hfill 2018
+\item Jimin Liu Scholarship, Nanjing University \hfill 2017
+\end{compactList}
+
+\section{Academic Service}
+\begin{compactList}
+\item Program Committee Member, AAAI Conference on Artificial Intelligence (2021) 
+\item Reviewer, Conference on Neural Information Processing Systems (2023 -- 2024)
+\item Reviewer, International Conference on Artificial Intelligence and Statistics (2021, 2024)
+\item Reviewer, International Conference on Learning Representations (2024 -- 2025)
+\item Reviewer, International Conference on Machine Learning (2023 -- 2025)
+\end{compactList}
+\end{document}

@@ -1,0 +1,102 @@
+% Template for CV and resume.
+
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% Beginning of setting paper style
+\setlength\topmargin{0pt}
+\addtolength\topmargin{-\headheight}
+\addtolength\topmargin{-\headsep}
+\setlength\oddsidemargin{0pt}
+\setlength\textwidth{\paperwidth}
+\addtolength\textwidth{-2in}
+\setlength\textheight{\paperheight}
+\addtolength\textheight{-2in}
+
+\setlength\parindent{0pt}
+% End of setting paper style
+
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+]{hyperref}
+
+\usepackage[
+    backend=biber,
+    style=numeric,
+    maxbibnames=99,
+    sorting=ydnt,
+]{biblatex}
+
+\DeclareSourcemap{
+    \maps[datatype=bibtex]{
+        \map[overwrite]{
+            \perdatasource{./bib/conference.bib}
+            \step[fieldset=keywords, fieldvalue={,conference}, append]
+        }
+        \map[overwrite]{
+            \perdatasource{./bib/light.bib}
+            \step[fieldset=keywords, fieldvalue={,workshop}, append]
+        }
+    }
+}
+
+% https://tex.stackexchange.com/questions/233581/ateverybibitem-clearfieldtitle-in-beamer
+% Remove "in:" in bibliography
+% \renewbibmacro{in:}{}
+\AtEveryCitekey{%
+    \ifentrytype{inproceedings}
+    {\clearfield{volume}}{}%
+    \ifentrytype{inproceedings}
+    {\clearfield{publisher}}{}%
+}
+
+%%%%%%
+% make name bold
+% TODO: make it work with equal contributions
+% https://tex.stackexchange.com/a/327046
+\newcommand*{\boldname}[3]{%
+    \def\lastname{#1}%
+    \def\firstname{#2}%
+    \def\firstinit{#3}%
+}
+\boldname{Wu}{Kaiwen}{K.}
+
+\renewcommand{\mkbibnamegiven}[1]{%
+    \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+    {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+    \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+    {\mkbibbold{#1}}{#1}%
+}
+%%%%%%
+
+\usepackage{setspace}
+
+\titleformat{\section}{\normalfont\bfseries\uppercase}{}{0em}{}[{\hrule}]
+\titlespacing{\section}{0pt}{6pt}{6pt}
+
+\newenvironment{compactList}
+{\begin{itemize}[leftmargin=*,noitemsep,nolistsep]}
+{\end{itemize}}
+
+\newcommand{\spanpage}[2]{%
+    #1 \hfill {#2}{\parfillskip0pt\par}%
+}
+
+% latex does not allow arguments in the closing section.
+% https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
+\newenvironment{education}[5][\smallskip]{%
+    #1%
+    \spanpage{\textbf{#2}}{#3}%
+    \spanpage{#4}{#5}%
+}{}
+
+\newenvironment{work}[5][\medskip]{%
+    #1%
+    \spanpage{\textbf{#2}}{#3}%
+    \spanpage{#4}{#5}%
+}{}
