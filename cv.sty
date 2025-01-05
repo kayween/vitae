@@ -27,7 +27,9 @@
     style=numeric,
     maxbibnames=99,
     sorting=ydnt,
+    defernumbers=true,
 ]{biblatex}
+\addbibresource[glob=true]{./bib/*}
 
 \DeclareSourcemap{
     \maps[datatype=bibtex]{
@@ -45,12 +47,20 @@
 % https://tex.stackexchange.com/questions/233581/ateverybibitem-clearfieldtitle-in-beamer
 % Remove "in:" in bibliography
 % \renewbibmacro{in:}{}
-\AtEveryCitekey{%
-    \ifentrytype{inproceedings}
-    {\clearfield{volume}}{}%
-    \ifentrytype{inproceedings}
-    {\clearfield{publisher}}{}%
-}
+% \AtEveryCitekey{%
+%     \ifentrytype{inproceedings}
+%     {\clearfield{year}}{}%
+% }
+\AtEveryBibitem{\clearfield{pages}}
+\AtEveryBibitem{\clearfield{volume}}
+\AtEveryBibitem{\clearfield{number}}
+\AtEveryBibitem{\clearfield{url}}
+\AtEveryBibitem{\clearfield{pdf}}
+\AtEveryBibitem{\clearfield{series}}
+\AtEveryBibitem{\clearfield{month}}
+
+\AtEveryBibitem{\clearname{editor}}
+\AtEveryBibitem{\clearlist{publisher}}
 
 %%%%%%
 % make name bold
