@@ -119,11 +119,9 @@
 % \titleformat{\section}{\color{RawSienna}\normalfont\large\bfseries}{}{0em}{}[{\hrule}]
 \titlespacing{\section}{0pt}{6pt}{6pt}
 
-\titleformat{\subsection}{\normalfont\normalsize\bfseries}{}{0em}{}[]
+% \titleformat{\subsection}{\normalfont\normalsize\bfseries}{}{0em}{}[]
+\titleformat{\subsection}{\color{Mahogany}\normalfont\large\bfseries}{}{0em}{}[]
 \titlespacing{\subsection}{0pt}{4pt}{4pt}
-
-% \titleformat{\subsubsection}{\normalfont\bfseries}{}{0em}{}[]
-% \titlespacing{\subsubsection}{0pt}{4pt}{4pt}
 
 \newenvironment{compactList}
 {\begin{itemize}[leftmargin=*,noitemsep,nolistsep]}
@@ -133,17 +131,18 @@
     #1 \hfill {#2}{\parfillskip0pt\par}%
 }
 
+% make bib fonts smaller because AISTATS' booktitle is too long..
 \renewcommand*{\bibfont}{\small}
 
 % latex does not allow arguments in the closing section.
 % https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
-\newenvironment{education}[5][\medskip]{%
+\newenvironment{education}[5][\bigskip]{%
     #1%
     \spanpage{\textbf{#2}}{#3}%
     \spanpage{#4}{#5}%
 }{}
 
-\newenvironment{work}[5][\medskip]{%
+\newenvironment{work}[5][\bigskip]{%
     #1%
     \spanpage{\textbf{#2}}{#3}%
     \spanpage{#4}{#5}%
