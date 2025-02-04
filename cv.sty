@@ -112,9 +112,18 @@
 \DeclareFieldFormat*{booktitle}{#1}
 
 \usepackage{setspace}
+\usepackage[dvipsnames]{xcolor}
 
-\titleformat{\section}{\normalfont\bfseries\uppercase}{}{0em}{}[{\hrule}]
+% \titleformat{\section}{\color{BrickRed}\normalfont\large\bfseries}{}{0em}{}[{\hrule}]
+\titleformat{\section}{\color{Mahogany}\normalfont\Large\bfseries}{}{0em}{}[{\hrule}]
+% \titleformat{\section}{\color{RawSienna}\normalfont\large\bfseries}{}{0em}{}[{\hrule}]
 \titlespacing{\section}{0pt}{6pt}{6pt}
+
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{}{0em}{}[]
+\titlespacing{\subsection}{0pt}{4pt}{4pt}
+
+% \titleformat{\subsubsection}{\normalfont\bfseries}{}{0em}{}[]
+% \titlespacing{\subsubsection}{0pt}{4pt}{4pt}
 
 \newenvironment{compactList}
 {\begin{itemize}[leftmargin=*,noitemsep,nolistsep]}
@@ -128,7 +137,7 @@
 
 % latex does not allow arguments in the closing section.
 % https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
-\newenvironment{education}[5][\smallskip]{%
+\newenvironment{education}[5][\medskip]{%
     #1%
     \spanpage{\textbf{#2}}{#3}%
     \spanpage{#4}{#5}%
