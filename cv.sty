@@ -34,10 +34,6 @@
 % https://tex.stackexchange.com/questions/233581/ateverybibitem-clearfieldtitle-in-beamer
 % Remove "in:" in bibliography
 \renewbibmacro{in:}{}
-\AtEveryCitekey{%
-    \ifentrytype{inproceedings}
-    {\clearfield{year}}{}%
-}
 
 \AtEveryBibitem{\clearfield{pages}}
 \AtEveryBibitem{\clearfield{volume}}
