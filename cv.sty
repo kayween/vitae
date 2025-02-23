@@ -3,18 +3,14 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 
-% Beginning of setting paper style
-\setlength\topmargin{0pt}
-\addtolength\topmargin{-\headheight}
-\addtolength\topmargin{-\headsep}
-\setlength\oddsidemargin{0pt}
-\setlength\textwidth{\paperwidth}
-\addtolength\textwidth{-2in}
-\setlength\textheight{\paperheight}
-\addtolength\textheight{-2in}
-
+\usepackage[
+    letterpaper,
+    left=0.8in, % left=1in is too large thanks to AISTATS
+    right=0.8in,
+    top=1in,
+    bottom=1in,
+]{geometry}
 \setlength\parindent{0pt}
-% End of setting paper style
 
 \usepackage[
     colorlinks=true,
@@ -115,7 +111,7 @@
 }
 
 % make bib fonts smaller because AISTATS' booktitle is too long..
-\renewcommand*{\bibfont}{\small}
+% \renewcommand*{\bibfont}{\small}
 
 % latex does not allow arguments in the closing section.
 % https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
