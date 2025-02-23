@@ -1,4 +1,4 @@
-% Template for CV and resume.
+% Template for CV
 
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -29,20 +29,7 @@
     sorting=ydnt,
     defernumbers=true,
 ]{biblatex}
-\addbibresource[glob=true]{./bib/*}
-
-\DeclareSourcemap{
-    \maps[datatype=bibtex]{
-        \map[overwrite]{
-            \perdatasource{./bib/conference.bib}
-            \step[fieldset=keywords, fieldvalue={,conference}, append]
-        }
-        \map[overwrite]{
-            \perdatasource{./bib/light.bib}
-            \step[fieldset=keywords, fieldvalue={,workshop}, append]
-        }
-    }
-}
+\addbibresource{reference.bib}
 
 % https://tex.stackexchange.com/questions/233581/ateverybibitem-clearfieldtitle-in-beamer
 % Remove "in:" in bibliography
