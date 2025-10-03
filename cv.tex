@@ -26,19 +26,19 @@ Before starting my PhD, I worked on generative modeling, convex optimization, an
 \section{Education}
 \begin{education}[]
 {University of Pennsylvania}{Philadelphia, PA}
-{Ph.D.\ in Computer and Information Science}{2021 -- Present}
+{Doctor of Philosophy in Computer and Information Science}{2021 -- Present}
 Advisor: Jacob R. Gardner
 \end{education}
 
 \begin{education}
 {University of Waterloo}{Waterloo, ON}
-{M.Math.\ in Computer Science (Thesis Option)}{2018 -- 2020}
+{Master of Mathematics in Computer Science (Thesis Option)}{2018 -- 2020}
 Advisor: Yaoliang Yu
 \end{education}
 
 \begin{education}
 {Nanjing University}{Nanjing, China}
-{B.Sc.\ in Computer Science}{2014 -- 2018}
+{Bachelor of Science in Computer Science}{2014 -- 2018}
 \end{education}
 
 \section{Work Experience}
@@ -46,12 +46,12 @@ Advisor: Yaoliang Yu
 {Meta}{New York, NY}
 {Research Scientist Intern}{Jun 2025 -- Oct 2025}
 \begin{compactList}
-\item Worked on Bayesian optimization for AutoML.
+\item Worked on Bayesian optimization for automated machine learning.
 \end{compactList}
 \end{work}
 
 \begin{work}
-{Meta Reality Labs}{Redmond, WA}
+{Meta}{Redmond, WA}
 {Research Scientist Intern}{Aug 2024 -- Dec 2024}
 \begin{compactList}
 \item Worked on experimental designs for VR/AR hardware using active learning.
@@ -68,11 +68,21 @@ Advisor: Yaoliang Yu
 \end{work}
 
 \section{Open Source Contributions}
-\textbf{BoTorch} (\url{https://github.com/pytorch/botorch}) \\
-A Python package for Bayesian optimization in PyTorch
+\begin{opensource}[]
+{Ax}{https://github.com/facebook/ax}
+{An adaptive experimentation platform written in Python}
 \begin{compactList}
-\item Implemented an improved elliptical slice sampling method for truncated normal distributions.
+\item Implemented new features supporting experiments in hierarchical search spaces.
 \end{compactList}
+\end{opensource}
+
+\begin{opensource}
+{BoTorch}{https://github.com/pytorch/botorch}
+{A Python package for Bayesian optimization in PyTorch}
+\begin{compactList}
+\item Implemented an elliptical slice sampling algorithm for truncated normal distributions.
+\end{compactList}
+\end{opensource}
 
 \nocite{*}
 
@@ -84,9 +94,13 @@ See also at my Google Scholar
 \newrefcontext[labelprefix=C]
 \printbibliography[type=inproceedings, heading=none]
 
-\subsection{Workshop Papers}
+\subsection{Lightly Reviewed Workshop Papers}
 \newrefcontext[labelprefix=W]
 \printbibliography[type=misc, heading=none]
+
+\subsection{Preprints}
+\newrefcontext[labelprefix=P]
+\printbibliography[type=unpublished, heading=none]
 
 \section{Teaching Experience}
 \subsection{University of Pennsylvania}
@@ -104,10 +118,26 @@ See also at my Google Scholar
 
 \section{Honors \& Awards}
 \begin{compactList}
-\item NeurIPS Top Reviewer \hfill 2024
-\item Vector Scholarship in Artificial Intelligence, Vector Institute \hfill 2018
-\item Entrance Scholarship, University of Waterloo \hfill 2018
-\item Jimin Liu Scholarship, Nanjing University \hfill 2017
+\item
+\spanpage{
+    Top Reviewer, Conference on Neural Information Processing Systems
+}{2024}
+\item
+\spanpage{
+    Graduate Fellowship, University of Pennsylvania
+}{2021}
+\item
+\spanpage{
+    Vector Scholarship in Artificial Intelligence, Vector Institute
+}{2018}
+\item
+\spanpage{
+    Entrance Scholarship, University of Waterloo
+}{2018}
+\item
+\spanpage{
+    Jimin Liu Scholarship, Nanjing University
+}{2017}
 \end{compactList}
 
 \section{Academic Service}

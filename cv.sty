@@ -114,14 +114,20 @@
 
 % latex does not allow arguments in the closing section.
 % https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
-\newenvironment{education}[5][\bigskip]{%
+\newenvironment{education}[5][\medskip]{%
     #1%
     \spanpage{\textbf{#2}}{#3}%
     \spanpage{#4}{#5}%
 }{}
 
-\newenvironment{work}[5][\bigskip]{%
+\newenvironment{work}[5][\medskip]{%
     #1%
     \spanpage{\textbf{#2}}{#3}%
     \spanpage{#4}{#5}%
+}{}
+
+\newenvironment{opensource}[4][\medskip]{%
+    #1%
+    \spanpage{\textbf{#2}}{\url{#3}}%
+    {#4}%
 }{}
