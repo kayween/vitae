@@ -4,26 +4,26 @@
 \usepackage{titlesec}
 
 \usepackage[
-    letterpaper,
-    left=0.8in, % left=1in is too large thanks to AISTATS
-    right=0.8in,
-    top=1in,
-    bottom=1in,
+  letterpaper,
+  left=0.8in, % left=1in is too large thanks to AISTATS
+  right=0.8in,
+  top=1in,
+  bottom=1in,
 ]{geometry}
 \setlength\parindent{0pt}
 
 \usepackage[
-    colorlinks=true,
-    linkcolor=black,
-    urlcolor=black,
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
 ]{hyperref}
 
 \usepackage[
-    backend=biber,
-    style=numeric,
-    maxbibnames=99,
-    sorting=ydnt,
-    defernumbers=true,
+  backend=biber,
+  style=numeric,
+  maxbibnames=99,
+  sorting=ydnt,
+  defernumbers=true,
 ]{biblatex}
 \addbibresource{reference.bib}
 
@@ -47,20 +47,24 @@
 % TODO: make it work with equal contributions
 % https://tex.stackexchange.com/a/327046
 \newcommand*{\boldname}[3]{%
-    \def\lastname{#1}%
-    \def\firstname{#2}%
-    \def\firstinit{#3}%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}%
 }
 \boldname{Wu}{Kaiwen}{K.}
 
 \renewcommand{\mkbibnamegiven}[1]{%
-    \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
-    {\mkbibbold{#1}}{#1}%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or
+    test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test
+  {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
 }
 
 \renewcommand{\mkbibnamefamily}[1]{%
-    \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
-    {\mkbibbold{#1}}{#1}%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or
+    test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test
+  {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
 }
 %%%%%%
 
@@ -72,13 +76,13 @@
 \makeatletter
 \def\do#1{
   \ifcsdef{blx@bbx@#1}
-    {\xpatchbibdriver{#1}
-       {\printlist{language}%
-        \newunit\newblock}
-       {\printlist{language}%
-        \printunit{\newline\bibsentence}}
-       {}{}}
-    {}}
+  {\xpatchbibdriver{#1}
+    {\printlist{language}%
+    \newunit\newblock}
+    {\printlist{language}%
+    \printunit{\newline\bibsentence}}
+  {}{}}
+{}}
 \abx@doentrytypes
 
 % % remove quotation marks, goat
@@ -101,12 +105,16 @@
 \titleformat{\subsection}{\color{Mahogany}\normalfont\large\bfseries}{}{0em}{}[]
 \titlespacing{\subsection}{0pt}{4pt}{4pt}
 
-\newenvironment{compactList}
-{\begin{itemize}[leftmargin=*,noitemsep,nolistsep]}
-{\end{itemize}}
+% tex-fmt: off
+\newenvironment{compactList}{
+  \begin{itemize}[leftmargin=*,noitemsep,nolistsep]
+}{
+  \end{itemize}
+}
+% tex-fmt: on
 
 \newcommand{\spanpage}[2]{%
-    #1 \hfill {#2}{\parfillskip0pt\par}%
+  #1 \hfill {#2}{\parfillskip0pt\par}%
 }
 
 % make bib fonts smaller because AISTATS' booktitle is too long..
@@ -115,20 +123,20 @@
 % latex does not allow arguments in the closing section.
 % https://tex.stackexchange.com/questions/17036/why-cant-the-end-code-of-an-environment-contain-an-argument
 \newenvironment{education}[5][\medskip]{%
-    #1%
-    \spanpage{\textbf{#2}}{#3}%
-    \spanpage{#4}{#5}%
+  #1%
+  \spanpage{\textbf{#2}}{#3}%
+  \spanpage{#4}{#5}%
 }{}
 
 \newenvironment{work}[5][\medskip]{%
-    #1%
-    \spanpage{\textbf{#2}}{#3}%
-    \spanpage{#4}{#5}%
+  #1%
+  \spanpage{\textbf{#2}}{#3}%
+  \spanpage{#4}{#5}%
 }{}
 
 \newenvironment{opensource}[4][\medskip]{%
-    #1%
-    \textbf{#2} (\url{#3})%
+  #1%
+  \textbf{#2} (\url{#3})%
 
-    {#4}%
+  {#4}%
 }{}
